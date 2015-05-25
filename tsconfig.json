@@ -1,0 +1,26 @@
+{
+    "version": "1.5.0-alpha",
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "files": [
+        "./app.ts",
+        "./components.ts",
+        "./libs/bobril.d.ts",
+        "./libs/bobril.mouse.d.ts",
+        "./libs/bobril.onchange.d.ts",
+        "./libs/bobril.router.d.ts",
+        "./model.ts"
+    ]
+}
