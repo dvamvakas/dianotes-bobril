@@ -28,13 +28,29 @@ function hc(tag: string, className: any, ...args: any[]): IBobrilNode {
        me.tag = "div";
        me.attrs = {id:"loginBar"};
        me.children = [
-         h("h1",this.getLoginBarHeader())
+         h("h1",this.getLoginBarHeader()),{component: LoginForm}
        ];
      },
      getLoginBarHeader():IBobrilNode[]{
        var loginBarHeader = [];
        loginBarHeader.push(hc("span","hideText","DiaNotes"));
        return loginBarHeader;
+     },
+
+   }
+   var LoginForm: IBobrilComponent = {
+     render(ctx:any, me: IBobrilNode){
+       me.tag = "form";
+       me.attrs = {action: "", method:"post"}
+       me.children = [
+         hc("div","formRow","Přihlašovací email:"), hc("div","formInput")
+       ];
+     },
+     getLoginPageInput():IBobrilNode[]{
+       
      }
+
+
+
    }
 }

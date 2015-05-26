@@ -36,13 +36,24 @@ var Dianotes;
             me.tag = "div";
             me.attrs = { id: "loginBar" };
             me.children = [
-                h("h1", this.getLoginBarHeader())
+                h("h1", this.getLoginBarHeader()), { component: LoginForm }
             ];
         },
         getLoginBarHeader: function () {
             var loginBarHeader = [];
             loginBarHeader.push(hc("span", "hideText", "DiaNotes"));
             return loginBarHeader;
+        },
+    };
+    var LoginForm = {
+        render: function (ctx, me) {
+            me.tag = "form";
+            me.attrs = { action: "", method: "post" };
+            me.children = [
+                hc("div", "formRow", "Přihlašovací email:"), hc("div", "formInput")
+            ];
+        },
+        getLoginPageInput: function () {
         }
     };
 })(Dianotes || (Dianotes = {}));
